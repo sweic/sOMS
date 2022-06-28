@@ -1,0 +1,12 @@
+export { AggregateFoodItemArgs } from "./AggregateFoodItemArgs";
+export { CreateFoodItemArgs } from "./CreateFoodItemArgs";
+export { CreateManyFoodItemArgs } from "./CreateManyFoodItemArgs";
+export { DeleteFoodItemArgs } from "./DeleteFoodItemArgs";
+export { DeleteManyFoodItemArgs } from "./DeleteManyFoodItemArgs";
+export { FindFirstFoodItemArgs } from "./FindFirstFoodItemArgs";
+export { FindManyFoodItemArgs } from "./FindManyFoodItemArgs";
+export { FindUniqueFoodItemArgs } from "./FindUniqueFoodItemArgs";
+export { GroupByFoodItemArgs } from "./GroupByFoodItemArgs";
+export { UpdateFoodItemArgs } from "./UpdateFoodItemArgs";
+export { UpdateManyFoodItemArgs } from "./UpdateManyFoodItemArgs";
+export { UpsertFoodItemArgs } from "./UpsertFoodItemArgs";

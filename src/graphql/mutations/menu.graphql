@@ -1,0 +1,130 @@
+mutation createMenuItem($data: MenuCreateInput!) {
+  createMenu(data: $data) {
+    title
+    id
+    updatedat
+    sections {
+      id
+    }
+    fooditems {
+      id
+    }
+
+  }
+}
+
+mutation createFoodItem($data: FoodItemCreateInput!) {
+  createFoodItem(data: $data) {
+    code
+    title
+    id
+    price
+    available
+    options
+    sections {
+      id
+      title
+    }
+    image {
+      id
+      imageURL
+    }
+    menu {
+      id
+      title
+    }
+  }
+}
+
+mutation createSection($data: SectionCreateInput!) {
+  createSection(data: $data) {
+    id
+    code
+    title
+    menu {
+      id
+      title
+    }
+    image {
+      id
+      imageURL
+    }
+    fooditems {
+      id
+      title
+    }
+  }
+}
+
+mutation editMenu($data: MenuUpdateInput!, $where: MenuWhereUniqueInput!) {
+  updateMenu(data: $data, where: $where) {
+    id
+    title
+    updatedat
+  }
+}
+
+mutation editSection($data: SectionUpdateInput!, $where: SectionWhereUniqueInput!) {
+  updateSection(data: $data, where: $where) {
+    id
+    code
+    image {
+      id
+      imageURL
+    }
+    title
+    menu {
+      id
+      title
+    }
+    fooditems {
+      id
+      title
+    }
+  }
+}
+
+mutation editSafeItem($data: FoodItemUpdateInput!, $where: FoodItemWhereUniqueInput!) {
+  editSafeItem(data: $data, where: $where) {
+    id
+    code
+    title
+    price
+    available
+    options
+    menu {
+      id
+      title
+    }
+    sections {
+      id
+      title
+      image {
+        id
+        imageURL
+      }
+    }
+    image {
+      id
+      imageURL
+    }
+  }
+}
+
+mutation deleteSection($where: SectionWhereUniqueInput!) {
+  deleteSection(where: $where) {
+    id
+  }
+}
+
+mutation deleteMenu($where: MenuWhereUniqueInput!) {
+  deleteMenu(where: $where) {
+    id
+  }
+}
+
+mutation deleteFoodItem($where: FoodItemWhereUniqueInput!) {
+  deleteFoodItem(where: $where) {
+    id
+  }
+}

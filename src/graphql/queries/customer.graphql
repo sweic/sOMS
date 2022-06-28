@@ -1,0 +1,60 @@
+query validateTableToken($token: String!) {
+  validateTableToken(token: $token) {
+    customerTable {
+      id
+      tableNumber
+      orders {
+        id
+        price
+        createdAt
+        completedAt
+        tableNumber
+        orderitems {
+          id
+          foodid
+          quantity
+          totalPrice
+          title
+        }
+      }
+      session {
+        id
+        lastOrder
+      }
+    }
+    currentMenu {
+      id
+      sections {
+        id
+        code
+        title
+        image {
+          id
+          imageURL
+        }
+        fooditems {
+          id
+          code
+          title
+          price
+          available
+          image {
+            id
+            imageURL
+          }
+        }
+      }
+      fooditems {
+        id
+        code
+        title
+        price
+        available
+        image {
+          id
+          imageURL
+        }
+      }
+    }
+  }
+}

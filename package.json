@@ -1,0 +1,72 @@
+{
+  "name": "sweipos",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@apollo/client": "^3.6.4",
+    "@graphql-codegen/cli": "^2.6.2",
+    "@graphql-codegen/typed-document-node": "^2.2.11",
+    "@mantine/core": "^4.2.10",
+    "@mantine/dates": "^4.2.8",
+    "@mantine/dropzone": "^4.2.5",
+    "@mantine/hooks": "^4.2.10",
+    "@mantine/notifications": "^4.2.10",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.2.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.1",
+    "@types/lodash": "^4.14.182",
+    "@types/node": "^16.11.36",
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18.0.4",
+    "dayjs": "^1.11.3",
+    "graphql": "^16.5.0",
+    "graphql-ws": "^5.8.2",
+    "qrcode.react": "^3.0.2",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.1",
+    "react-to-print": "^2.14.7",
+    "react-transition-group": "^4.4.2",
+    "styled-components": "^5.3.5",
+    "tabler-icons-react": "^1.48.0",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "gen": "graphql-codegen --config codegen.yml"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "2.6.2",
+    "@graphql-codegen/typescript": "2.4.11",
+    "@graphql-codegen/typescript-operations": "2.4.0",
+    "@graphql-codegen/typescript-react-apollo": "3.2.14",
+    "@graphql-codegen/typescript-resolvers": "^2.6.4",
+    "@graphql-codegen/urql-introspection": "^2.1.1",
+    "@types/react-transition-group": "^4.4.4",
+    "@types/styled-components": "^5.1.25",
+    "typescript": "^4.7.4"
+  }
+}

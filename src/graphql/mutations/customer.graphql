@@ -1,0 +1,22 @@
+mutation createSafeOrder($data: OrderCreateInput!) {
+  createSafeOrder(data: $data) {
+    id
+    createdAt
+    price
+    completedAt
+    table {
+      id
+    }
+    session {
+      id
+    }
+    orderitems {
+      id
+      foodid
+      quantity
+      totalPrice
+      title
+    }
+    tableNumber
+  }
+}

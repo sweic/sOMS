@@ -1,0 +1,71 @@
+query fetchService($where: ServiceWhereUniqueInput!) {
+  service(where: $where) {
+    id
+    currentid
+    dummy
+    current {
+      id
+      createdAt
+      lastOrder
+      table
+      revenue
+      orders {
+        id
+        tableNumber
+        price
+        createdAt
+        completedAt
+        orderitems {
+          id
+          totalPrice
+          quantity
+          foodid
+          title
+          order {
+            id
+          }
+        }
+        session {
+          id
+          revenue
+        }
+      }
+      tables {
+        id
+        tableNumber
+        active
+        token
+        session {
+          id
+          revenue
+        }
+        createdAt
+        orders {
+          id
+          tableNumber
+          createdAt
+          completedAt
+          price
+          orderitems {
+            id
+            totalPrice
+            quantity
+            foodid
+            title
+            order {
+              id
+            }
+          }
+          session {
+            id
+            revenue
+          }
+        }
+      }
+
+      service {
+        id
+      }
+    }
+  }
+}

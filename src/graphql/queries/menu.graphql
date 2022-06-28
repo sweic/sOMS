@@ -1,0 +1,45 @@
+query fetchAllMenus {
+  menus {
+    id
+    updatedat
+    title
+    sections {
+      id
+      code
+      title
+      menu {
+        id
+        updatedat
+        title
+      }
+      image {
+        id
+        imageURL
+      }
+      fooditems {
+        id
+        title
+      }
+    }
+    fooditems {
+      id
+      code
+      title
+      price
+      available
+      options
+      sections {
+        id
+        title
+      }
+      image {
+        id
+        imageURL
+      }
+      menu {
+        id
+        title
+      }
+    }
+  }
+}

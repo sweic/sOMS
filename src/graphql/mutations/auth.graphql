@@ -1,0 +1,8 @@
+query validateJWT {
+  validateJWT
+}
+mutation validateUser($token: String!) {
+  validateUser(token: $token) {
+    id
+  }
+}

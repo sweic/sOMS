@@ -1,0 +1,12 @@
+export { AggregateImageArgs } from "./AggregateImageArgs";
+export { CreateImageArgs } from "./CreateImageArgs";
+export { CreateManyImageArgs } from "./CreateManyImageArgs";
+export { DeleteImageArgs } from "./DeleteImageArgs";
+export { DeleteManyImageArgs } from "./DeleteManyImageArgs";
+export { FindFirstImageArgs } from "./FindFirstImageArgs";
+export { FindManyImageArgs } from "./FindManyImageArgs";
+export { FindUniqueImageArgs } from "./FindUniqueImageArgs";
+export { GroupByImageArgs } from "./GroupByImageArgs";
+export { UpdateImageArgs } from "./UpdateImageArgs";
+export { UpdateManyImageArgs } from "./UpdateManyImageArgs";
+export { UpsertImageArgs } from "./UpsertImageArgs";

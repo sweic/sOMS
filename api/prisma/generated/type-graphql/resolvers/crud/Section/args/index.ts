@@ -1,0 +1,12 @@
+export { AggregateSectionArgs } from "./AggregateSectionArgs";
+export { CreateManySectionArgs } from "./CreateManySectionArgs";
+export { CreateSectionArgs } from "./CreateSectionArgs";
+export { DeleteManySectionArgs } from "./DeleteManySectionArgs";
+export { DeleteSectionArgs } from "./DeleteSectionArgs";
+export { FindFirstSectionArgs } from "./FindFirstSectionArgs";
+export { FindManySectionArgs } from "./FindManySectionArgs";
+export { FindUniqueSectionArgs } from "./FindUniqueSectionArgs";
+export { GroupBySectionArgs } from "./GroupBySectionArgs";
+export { UpdateManySectionArgs } from "./UpdateManySectionArgs";
+export { UpdateSectionArgs } from "./UpdateSectionArgs";
+export { UpsertSectionArgs } from "./UpsertSectionArgs";

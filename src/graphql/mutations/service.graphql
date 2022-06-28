@@ -1,0 +1,93 @@
+mutation newServiceCreator(
+  $where: ServiceWhereUniqueInput!
+  $create: ServiceCreateInput!
+  $update: ServiceUpdateInput!
+) {
+  upsertSafeService(where: $where, create: $create, update: $update) {
+    id
+    dummy
+    currentid
+    current {
+      id
+      createdAt
+      lastOrder
+      table
+      revenue
+      tables {
+        id
+      }
+      menu {
+        id
+      }
+      service {
+        id
+      }
+    }
+  }
+}
+
+mutation createTable($data: TableCreateInput!) {
+  createSafeTable(data: $data) {
+    id
+    tableNumber
+    active
+    token
+    createdAt
+    orders {
+      id
+      price
+      tableNumber
+      createdAt
+      completedAt
+      orderitems {
+        id
+        totalPrice
+        quantity
+        foodid
+        title
+      }
+    }
+    session {
+      id
+      revenue
+    }
+  }
+}
+
+mutation vacateTable($data: TableUpdateInput!, $where: TableWhereUniqueInput!) {
+  vacateSafeTable(data: $data, where: $where) {
+    id
+    session {
+      id
+    }
+  }
+}
+
+mutation terminateService(
+  $data: ServiceUpdateInput!
+  $where: ServiceWhereUniqueInput!
+) {
+  terminateService(data: $data, where: $where) {
+    id
+    current {
+      id
+    }
+  }
+}
+
+mutation completeOrder(
+  $data: OrderUpdateInput!
+  $where: OrderWhereUniqueInput!
+) {
+  completeOrder(data: $data, where: $where) {
+    id
+    completedAt
+    price
+  }
+}
+
+mutation deleteOrder($where: OrderWhereUniqueInput!) {
+  deleteOrder(where: $where) {
+    id
+  }
+}

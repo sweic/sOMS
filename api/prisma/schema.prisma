@@ -1,0 +1,114 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+
+generator client {
+  provider = "prisma-client-js"
+}
+generator typegraphql {
+  provider = "typegraphql-prisma"
+  output= "../prisma/generated/type-graphql"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Menu {
+  id Int @id @default(autoincrement())
+  updatedat DateTime @updatedAt
+  title String
+  sessions Session[]
+  sections Section[]
+  fooditems FoodItem[]
+}
+
+model Section {
+  id Int @id @default(autoincrement())
+  code Int @default(autoincrement())
+  title String
+  fooditems FoodItem[]
+  menu Menu @relation(fields: [menuid], references:[id], onDelete: Cascade)
+  menuid Int
+  image Image? @relation(fields: [imageid], references: [id])
+  imageid Int?
+
+}
+
+model FoodItem {
+  id Int @id @default(autoincrement())
+  code Int @default(autoincrement())
+  title String
+  sections Section[]
+  menu Menu @relation(fields: [menuid], references: [id], onDelete: Cascade)
+  menuid Int
+  price Decimal
+  available Boolean
+  options Json[]
+  image Image? @relation(fields: [imageid], references: [id])
+  imageid Int?
+}
+
+model Image {
+  id Int @id @default(autoincrement())
+  imageURL String
+  foodImage FoodItem?
+  sectionImage Section?
+  
+}
+
+model Session {
+  id Int @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  lastOrder DateTime
+  table Int
+  revenue Decimal @default(0) 
+  menu Menu? @relation(references: [id], fields: [menuid])
+  menuid Int?
+  service Service?
+  tables Table[]
+  orders Order[]
+}
+
+model Service {
+  id Int @id @default(autoincrement())
+  current Session? @relation(fields: [currentid], references: [id])
+  currentid Int?
+  dummy String?
+}
+
+model Table {
+  id Int @id @default(autoincrement())
+  tableNumber Int
+  createdAt DateTime @default(now())
+  completedAt DateTime?
+  active Boolean
+  token String @default(uuid())
+  session Session? @relation(fields: [sessionid], references: [id])
+  sessionid Int?
+  orders Order[]
+}
+
+model Order {
+  id Int @id @default(autoincrement())
+  tableNumber Int
+  createdAt DateTime @default(now())
+  completedAt DateTime?
+  price Decimal
+  table Table @relation(references: [id], fields: [tableid])
+  tableid Int
+  orderitems OrderItem[]
+  session Session @relation(references: [id], fields: [sessionid])
+  sessionid Int
+}
+
+model OrderItem {
+  id Int @id @default(autoincrement())
+  order Order @relation(references: [id], fields: [orderid], onDelete: Cascade)
+  orderid Int
+  foodid Int
+  quantity Int
+  totalPrice Decimal
+  title String
+}
